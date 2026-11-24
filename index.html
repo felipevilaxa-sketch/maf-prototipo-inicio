@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MAF · Inicio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app" id="app">
+
+    <!-- ============ BARRA SUPERIOR (solo mobile) ============ -->
+    <div class="topbar">
+      <img class="topbar__logo" src="assets/logo-maf.png" alt="maf">
+      <button type="button" class="topbar__menu" id="menu-open" aria-label="Abrir menú">
+        <img src="assets/m-hamburguesa.svg" alt="" width="30" height="20">
+      </button>
+    </div>
+    <div class="backdrop" id="backdrop"></div>
+
+    <!-- ============ MENÚ LATERAL (Menu 2) ============
+         --ix/--iy: ícono en menú expandido · --cx/--cy: ícono en menú colapsado
+         (ambos relativos al ítem). Solo "Inicio" está habilitado. -->
+    <aside class="sidebar" id="sidebar">
+      <img class="sidebar__logo" src="assets/logo-maf.png" alt="maf">
+
+      <nav class="sidebar__nav" aria-label="Menú principal">
+        <a href="#" class="nav-item is-active" data-key="inicio" style="--y:102px" aria-current="page">
+          <img class="nav-item__icon" src="assets/ic-inicio.svg" alt="" width="11" height="13" style="--ix:15px;--iy:8px">
+          <img class="nav-item__icon-collapsed" src="assets/c-inicio.svg" alt="" width="33" height="33" style="--cx:8px;--cy:-1px">
+          <span class="nav-item__label">Inicio</span>
+        </a>
+        <a class="nav-item" aria-disabled="true" data-key="notificaciones" style="--y:142px">
+          <img class="nav-item__icon" src="assets/ic-notificaciones.svg" alt="" width="12" height="12" style="--ix:15px;--iy:9px;--cx:19px;--cy:9px">
+          <span class="nav-item__label">Notificaciones</span>
+          <span class="nav-badge" id="notif-badge">2</span>
+        </a>
+        <a class="nav-item" aria-disabled="true" data-key="creditos" style="--y:177px">
+          <img class="nav-item__icon" src="assets/ic-creditos.svg" alt="" width="12.5455" height="12.5455" style="--ix:14.5px;--iy:8.5px;--cx:18.5px;--cy:8.5px">
+          <span class="nav-item__label">Mis Créditos</span>
+          <img class="nav-item__arrow" src="assets/flecha.svg" alt="" width="12.0428" height="9.6732" style="--ax:123px">
+        </a>
+        <a class="nav-item" aria-disabled="true" data-key="seguros" style="--y:211px">
+          <img class="nav-item__icon" src="assets/ic-seguros.svg" alt="" width="13.0002" height="15.0006" style="--ix:14.5px;--iy:9.5px;--cx:18.5px;--cy:11.5px">
+          <span class="nav-item__label">Seguros</span>
+        </a>
+        <a class="nav-item" aria-disabled="true" data-key="pagos" style="--y:248px">
+          <img class="nav-item__icon" src="assets/ic-pagos.svg" alt="" width="14" height="11" style="--ix:14px;--iy:10px;--cx:18px;--cy:15px">
+          <span class="nav-item__label">Pagos</span>
+          <img class="nav-item__arrow" src="assets/flecha.svg" alt="" width="12.0428" height="9.6732" style="--ax:85px">
+        </a>
+        <a class="nav-item" aria-disabled="true" data-key="certificados" style="--y:283px">
+          <img class="nav-item__icon" src="assets/ic-certificados.svg" alt="" width="11.3" height="14.3" style="--ix:15.35px;--iy:8.35px;--cx:19.35px;--cy:13.35px">
+          <span class="nav-item__label">Certificados</span>
+        </a>
+        <a class="nav-item" aria-disabled="true" data-key="servicio" style="--y:318px">
+          <img class="nav-item__icon" src="assets/ic-servicio.svg" alt="" width="15.2708" height="15.2813" style="--ix:12.8px;--iy:7.8px;--cx:17.8px;--cy:14.8px">
+          <span class="nav-item__label">Servicio al Cliente</span>
+          <img class="nav-item__arrow" src="assets/flecha.svg" alt="" width="12.0428" height="9.6732" style="--ax:158px">
+        </a>
+      </nav>
+
+      <!-- Grupo inferior (anclado al fondo; diseño medido sobre alto 699px) -->
+      <div class="sidebar__bottom">
+        <a class="nav-item nav-item--wide" aria-disabled="true" data-key="portabilidad" style="--y:514px">
+          <img class="nav-item__icon" src="assets/ic-portabilidad.svg" alt="" width="12.0018" height="12" style="--ix:13px;--iy:9px;--cx:20px;--cy:9px">
+          <span class="nav-item__label">Portabilidad Financiera</span>
+        </a>
+        <a class="nav-item nav-item--wide" aria-disabled="true" data-key="simulador" style="--y:549px">
+          <img class="nav-item__icon" src="assets/ic-simulador.svg" alt="" width="14.4003" height="13.9833" style="--ix:11.8px;--iy:6.8px;--cx:18.8px;--cy:6.8px">
+          <span class="nav-item__label">Simulador de Créditos</span>
+        </a>
+        <img class="sidebar__divider" src="assets/line-menu.svg" alt="" width="182" height="1">
+        <img class="sidebar__divider-collapsed" src="assets/c-line-menu.svg" alt="" width="46" height="1">
+        <a class="nav-item" aria-disabled="true" data-key="cuenta" style="--y:587px">
+          <img class="nav-item__icon" src="assets/ic-cuenta.svg" alt="" width="13.9979" height="14" style="--ix:14px;--iy:8px;--cx:18px;--cy:8px">
+          <span class="nav-item__label">Mi Cuenta</span>
+        </a>
+        <a class="nav-item" aria-disabled="true" data-key="ofertas" style="--y:621px">
+          <img class="nav-item__icon" src="assets/ic-ofertas.svg" alt="" width="14" height="14" style="--ix:15px;--iy:9px;--cx:19px;--cy:9px">
+          <span class="nav-item__label">Mis Ofertas</span>
+        </a>
+        <a class="nav-item" aria-disabled="true" data-key="logout" style="--y:655px">
+          <img class="nav-item__icon" src="assets/ic-cerrar.svg" alt="" width="12" height="12" style="--ix:16px;--iy:9px;--cx:20px;--cy:9px">
+          <span class="nav-item__label">Cerrar Sesión</span>
+        </a>
+      </div>
+
+      <button type="button" class="sidebar__toggle" id="sidebar-toggle" aria-label="Contraer menú" aria-expanded="true">
+        <img src="assets/flecha.svg" alt="" width="12.0428" height="9.6732">
+      </button>
+    </aside>
+
+    <!-- ============ CONTENIDO ============ -->
+    <main class="main">
+      <div class="content">
+        <!-- Header -->
+        <header class="header">
+          <h1 class="header__greeting">Hola, <span id="user-name">Juan Carlos</span></h1>
+          <img class="header__wave" src="assets/saludo.png" alt="">
+          <div class="header__date">
+            <span id="today-date">03 · 04 · 2023</span>
+            <span id="today-time">14:23 hrs.</span>
+          </div>
+          <img class="header__line" src="assets/line-header.svg" alt="" width="1025" height="1">
+          <img class="header__line header__line--m" src="assets/m-line-header.svg" alt="" width="341" height="1">
+          <h2 class="section-title header__title">Resumen</h2>
+        </header>
+
+        <!-- Aviso de vencimiento (se rellena desde app.js; vacío = sin aviso) -->
+        <div class="due-slot" id="due-slot" aria-live="polite"></div>
+
+        <!-- Productos activos -->
+        <section class="products" id="products" aria-label="Productos activos"></section>
+
+        <!-- Estado de solicitudes -->
+        <section class="requests">
+          <div class="requests__head">
+            <h2 class="section-title">Estado de solicitudes</h2>
+            <a href="#" class="link-red"><span class="d-only">Ver todos</span><span class="m-only">Ver todas</span></a>
+          </div>
+          <div class="card requests__card">
+            <div class="req-row req-row--head">
+              <span>Tipo</span>
+              <span>Ticket</span>
+              <span>Fecha de Solicitud</span>
+              <span>Fecha estimada de respuesta</span>
+              <span class="req-estado-head">Estado</span>
+              <span></span>
+            </div>
+            <div id="requests-body"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- ============ CONTROL DE PROTOTIPO (no es parte del diseño) ============ -->
+  <div class="proto-switch" role="group" aria-label="Escenario del prototipo">
+    <div class="proto-switch__row">
+      <span class="proto-switch__label">Créditos</span>
+      <div class="proto-switch__options">
+        <button type="button" data-credits="1" aria-pressed="false">1 crédito</button>
+        <button type="button" data-credits="2" aria-pressed="true">2 créditos</button>
+      </div>
+    </div>
+    <div class="proto-switch__row">
+      <span class="proto-switch__label">Vencimiento</span>
+      <div class="proto-switch__options" id="due-options"></div>
+    </div>
+  </div>
+
+  <template id="tpl-product">
+    <article class="card product">
+      <div class="product__progress">
+        <div class="progress"><div class="progress__fill"></div></div>
+        <p class="product__cuotas"></p>
+      </div>
+      <div class="product__body">
+        <div class="product__left">
+          <div class="product__top">
+            <div class="product__id">
+              <img class="d-only" src="assets/ic-auto.svg" alt="" width="49" height="49">
+              <img class="m-only" src="assets/m-ic-auto.svg" alt="" width="40" height="40">
+              <div>
+                <p class="product__name"></p>
+                <p class="product__vehicle"></p>
+              </div>
+            </div>
+            <span class="chip chip--filled"></span>
+          </div>
+          <div class="product__info">
+            <p class="product__code d-only"></p>
+            <p class="product__due"></p>
+            <p class="product__plan m-only"></p>
+            <p class="product__amount m-only"></p>
+            <p class="product__insurance m-only"></p>
+          </div>
+        </div>
+        <div class="product__actions">
+          <a href="#" class="product__detail">Ir al detalle</a>
+          <button type="button" class="btn-fill">Pagar</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
